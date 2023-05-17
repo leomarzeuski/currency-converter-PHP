@@ -2,6 +2,8 @@
 
 require_once __DIR__ . '/../src/CurrencyConverter.php';
 use PHPUnit\Framework\TestCase;
+use Currency\CurrencyConverter;
+use InvalidArgumentException;
 
 final class CurrencyConverterTest extends TestCase
 {
@@ -25,9 +27,9 @@ final class CurrencyConverterTest extends TestCase
     {
         $converter = new CurrencyConverter(10, 'BRL', 'EUR', 0.17);
         $result = $converter->convert();
-        $this->assertEquals(1.7, $result['valorConvertido']);
+        $this->assertEqualsWithDelta(1.7, $result['valorConvertido'], 0.00001);
         $this->assertEquals('€', $result['simboloMoeda']);
-    }   
+    }
 
     public function testConversionEURtoBRL(): void
     {

@@ -9,6 +9,7 @@ require_once __DIR__ . '/src/CurrencyConverter.php';
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Psr\Http\Message\ResponseInterface as Response;
 use Currency\CurrencyConverter;
+use InvalidArgumentException;
 
 require __DIR__ . '/vendor/autoload.php';
 

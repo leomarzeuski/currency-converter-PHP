@@ -2,6 +2,8 @@
 
 namespace Currency;
 
+use InvalidArgumentException;
+
 class CurrencyConverter
 {
     private $amount;
